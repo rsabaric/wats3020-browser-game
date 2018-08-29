@@ -14,9 +14,7 @@ class TicTacToe {
     constructor(){
         // Set up `this.player1` and `this.player2` properties.
         // These properties should be new Player class instances.
-        // You may set the "token" to anything that corresponds to a Glyphicon
-        // icon name ('heart', 'star', 'remove-sign', 'unchecked', 'bell',
-        // 'certificate', etc.)
+        // Changed glyphicon 
         this.player1 = new Player('unchecked');
         this.player2 = new Player('asterisk');
         this.currentPlayer = null;
@@ -30,8 +28,8 @@ class TicTacToe {
         this.winScreen = document.querySelector('#win-screen');      
         this.winnerToken = document.querySelector('#winner-token');   
         this.drawScreen = document.querySelector('#draw-screen');
-        // Initialize an Array representing the starting state of the game board.
-        // This is provided for you. We can access the spaces on the board using
+        // Initialized an Array representing the starting state of the game board.
+        //  the spaces on the board using
         // (X, Y) coordinates as `this.gameState[x][y]`, which is how the game
         // will check to see if the winner is known.
         this.gameState = [
@@ -41,7 +39,7 @@ class TicTacToe {
         ];
 
         // Array of Win States
-        // This is provided for you. Each of these arrays represents the ways
+        // Each of these arrays represents the ways
         // a player can win Tic Tac Toe. Each item in the array is another
         // array. Each of those arrays contains a set of (X, Y) coordinates.
         // If a player has claimed the tile at each of the coordinates listed in
@@ -88,7 +86,6 @@ class TicTacToe {
             document.dispatchEvent(drawEvent);
         }
     }
-
     recordMove(event){
         console.log('recording move.');
         let tileX = event.target.dataset.x;
