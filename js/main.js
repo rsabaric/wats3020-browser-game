@@ -36,7 +36,7 @@ class TicTacToe {
         this.winner = null;
 
         // TODO: Set `this.moveCount` equal to `0`
-        this.moveCount = O;
+        this.moveCount = 0;
 
         // TODO: Set up DOM elements used in game as Class properties
 
@@ -183,6 +183,7 @@ class TicTacToe {
     setUpBoard(){
         console.log('Setting up gameboard.');
         // TODO: Clear all content from the existing `this.gameboard` element.
+        this.gameboard.innerHTML = '';
 
         // We must draw the game board by using a loop to create rows with
         // tiles in them. We want to create the same structure as we see in the
@@ -190,39 +191,55 @@ class TicTacToe {
 
         // TODO: Create a `for` loop that will loop three times. The counter
         // variable in this loop should be called `i`.
+        for (let i=0; i < 3; i++){
+            
             // TODO: Create a new div element called `newRow
+            let newRow = document.createElement('div');
 
             // TODO: Set the `class` attribute on `newRow` to "row".
+            newRow.setAttribute('class','row');
 
             // TODO: Create another `for` loop to make the colums to contain the
             // tiles. This `for` loop should also loop 3 times. The counter
             // variable in this loop should be called `j`.
-
-                // TODO: Create a new `div` element called `newCol`.
+            
+            for (let j=0; j<3; j++){
+                
+                 // TODO: Create a new `div` element called `newCol`.
+                 let newCol=document.createElement('div');
 
                 // TODO: Set the `class` attribute on `newCol` to "col-xs-3".
+                newCol.setAttribute('class','col-xs-3');
 
                 // TODO: Create a new `span` element called `newTile`.
+                let newTile = document.createElement('span');
 
                 // TODO: Set the `class` attribute on `newTile` to equal the
                 // placeholder styles ("tile glyphicon glyphicon-question-sign").
+                newTile.setAttribute('class','tile glyphicon glyphicon-question-sign');
 
                 // TODO: Set the `data-x` attribute on the `newTile` element
                 // equal to `i`.
+                newTile.dataset.x = i;
 
                 // TODO: Set the `data-y` attribute on the `newTile` element
                 // equal to `j`.
+                newTile.dataset.y = j;
 
 
                 // TODO: Append `newTile` as a child to `newCol`.
+                newCol.appendChild(newTile);
 
                 // TODO: Append `newCol` as a child to `newRow`.
-
-            // NOTE: Your second `for` loop should end here.
+                newRow.appendChild(newCol);
+                
+            } //  Second `for` loop ends here.
 
             // TODO: Append the `newRow` element to `this.gameboard` as a child element.
-
-        // NOTE: Your first `for` loop should end here.
+            this.gameboard.appendChild(newRow);
+            
+            
+        } // NOTE: Your first `for` loop should end here.
 
         // TODO: Call `this.setUpTileListeners()` to add event listeners to the
         // `.tile` elements.
@@ -259,12 +276,11 @@ console.log('Game code starting.');
  
 document.addEventListener('DOMContentLoaded',function(event){
     
-  
+ console.log ('DOM content has loaded');
     let startButton = document.querySelector('#start-button');
-
   
     startButton.addEventListener('click',function(event){
-        game = newTicTacToe();
+        game = new TicTacToe();
         game.start();   
     });
 
