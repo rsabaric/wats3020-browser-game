@@ -23,37 +23,16 @@ class TicTacToe {
         // 'certificate', etc.)
         this.player1 = new Player('remove-sign');
         this.player2 = new Player('unchecked');
-
-
-        // TODO: Initialize several  properties that will be used to track game
-        // progress.
-
-        // TODO: Set `this.currentPlayer` equal to `null`
         this.currentPlayer = null;
-
-        // TODO: Set `this.gameStatus` equal to `null`
         this.gameStatus = null;
-        // TODO: Set `this.winner` equal to `null`
         this.winner = null;
-
-        // TODO: Set `this.moveCount` equal to `0`
-        this.moveCount = 0;
-
-        // TODO: Set up DOM elements used in game as Class properties
-
-        // TODO: Set `this.startPrompt` equal to the `#start-prompt` element
+        this.moveCount = 0; 
         this.startPrompt = document.querySelector('#start-prompt');
-        // TODO: Set `this.movePrompt` equal to the `#move-prompt` element
-        this.movePrompt = document.querySelector('#move-prompt');
-        // TODO: Set `this.currentPlayerToken` equal to the `#player-token` element
-        this.currentPlayerToken = document.querySelector('#player-token');
-        // TODO: Set `this.gameboard` equal to the `#gameboard` element
-        this.gameboard = document.querySelector('#gameboard');
-        // TODO: Set `this.winScreen` equal to the `#win-screen` element
-        this.winScreen = document.querySelector('#win-screen');
-        // TODO: Set `this.winnerToken` equal to the `#winner-token` element
-        this.winnerToken = document.querySelector('#winner-token');
-        // TODO: Set `this.drawScreen` equal to the `#draw-screen` element
+        this.movePrompt = document.querySelector('#move-prompt');       
+        this.currentPlayerToken = document.querySelector('#player-token');       
+        this.gameboard = document.querySelector('#gameboard');     
+        this.winScreen = document.querySelector('#win-screen');      
+        this.winnerToken = document.querySelector('#winner-token');   
         this.drawScreen = document.querySelector('#draw-screen');
         // Initialize an Array representing the starting state of the game board.
         // This is provided for you. We can access the spaces on the board using
@@ -129,15 +108,13 @@ class TicTacToe {
         // 1. Find the X, Y coordinates of the tile that was just selected
         // 2. Claim that tile in the `this.gameState` array
         // 3. Set the class attribute of the tile to reflect which player has claimed it
-
-        
         let tileX = event.target.dataset.x;
 
         let tileY = event.target.dataset.y;
         
         this.gameState[tileX][tileY] = this.currentPlayer.token;
 
-        event.target.setAttribute('class',`tile glyphicon glyphicon-${this.currentPlayer.token}`);
+        event.target.setAttribute('class',`tile played glyphicon glyphicon-${this.currentPlayer.token}`);
     }
     switchPlayer(){
         console.log('switching player');
@@ -178,7 +155,6 @@ class TicTacToe {
     }
     showDrawScreen(){
         // This method displays the end game screen for a Draw.
-
         this.drawScreen.setAttribute('class','show');
     }
     setUpBoard(){
@@ -260,14 +236,9 @@ document.addEventListener('DOMContentLoaded',function(event){
         console.log('Detected win event');
         game.showWinScreen();
     })
-    // TODO: In the handler for the "win" event, call the `game.showWinScreen()`
-    // method to display the winning screen.
+
 
 // NOTE: End of the "win" event listener.
-
-// TODO: Add an event listener on the `document` object that listens for the
-// "draw" event signal.
-
 
      document.addEventListener('draw', function(event){
         console.log('Detected draw event');
