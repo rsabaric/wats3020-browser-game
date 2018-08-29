@@ -41,19 +41,19 @@ class TicTacToe {
         // TODO: Set up DOM elements used in game as Class properties
 
         // TODO: Set `this.startPrompt` equal to the `#start-prompt` element
-
+        this.startPrompt = document.querySelector('#start-prompt');
         // TODO: Set `this.movePrompt` equal to the `#move-prompt` element
-
+        this.movePrompt = document.querySelector('#move-prompt');
         // TODO: Set `this.currentPlayerToken` equal to the `#player-token` element
-
+        this.currentPlayerToken = document.querySelector('#player-token');
         // TODO: Set `this.gameboard` equal to the `#gameboard` element
-
+        this.gameboard = document.querySelector('#gameboard');
         // TODO: Set `this.winScreen` equal to the `#win-screen` element
-
+        this.winScreen = document.querySelector('#win-screen');
         // TODO: Set `this.winnerToken` equal to the `#winner-token` element
-
+        this.winnerToken = document.querySelector('#winner-token');
         // TODO: Set `this.drawScreen` equal to the `#draw-screen` element
-
+        this.drawScreen = document.querySelector('#draw-screen');
         // Initialize an Array representing the starting state of the game board.
         // This is provided for you. We can access the spaces on the board using
         // (X, Y) coordinates as `this.gameState[x][y]`, which is how the game
@@ -257,23 +257,31 @@ class TicTacToe {
 // "DOMContentLoaded" event signal. This listener should execute an anonymous
 // function to handle the "DOMContentLoaded" event.
 
+document.addEventListener('DOMContentLoaded',function(event){
     // TODO: Inside the "DOMContentLoaded" event handler, perform the following
     // steps:
 
     // TODO: Select the `#start-button` element from the DOM and save it as a
     // variable called `startButton`.
+    let startButton = document.querySelector('#start-button');
 
     // TODO: Create an event listener on the `startButton` element that listens for
     // a "click" event and executes an anonymous function to start the game.
-
+    startButton.addEventListener('click',function(event){
+        
         // TODO: Inside the `startButton` event listener, instantiate a new
         // instance of the `TicTacToe` class and save it as a variable called
         // `game`.
-
+        game = newTicTacToe();
         // TODO: Call the `start()` method of the `game` object you just created.
+        game.start();   
+    });
 
     // NOTE: End of the `startButton` event listener here.
 
+    
+});
+    
 // NOTE: End of the "DOMContentLoaded" event listener here.
 
 
