@@ -155,15 +155,13 @@ class TicTacToe {
 
 //Few controls that player can successfully play
 let game;
-console.log('Game code starting.'); 
 document.addEventListener('DOMContentLoaded',function(event){
     let startButton = document.querySelector('#start-button'); 
     startButton.addEventListener('click',function(event){
         game = new TicTacToe();
         game.start();   
     });
-});
-    
+});   
 //End of the "DOMContentLoaded" event listener here.
     document.addEventListener('win', function(event){
         game.showWinScreen();
@@ -172,7 +170,6 @@ document.addEventListener('DOMContentLoaded',function(event){
      document.addEventListener('draw', function(event){
         game.showDrawScreen();
     })
-
 // NOTE: End of the "draw" event listener.
 
 // External function for event listeners provided for you.
