@@ -17,8 +17,8 @@ class TicTacToe {
         // You may set the "token" to anything that corresponds to a Glyphicon
         // icon name ('heart', 'star', 'remove-sign', 'unchecked', 'bell',
         // 'certificate', etc.)
-        this.player1 = new Player('asterisk');
-        this.player2 = new Player('unchecked');
+        this.player1 = new Player('bell');
+        this.player2 = new Player('asterisk');
         this.currentPlayer = null;
         this.gameStatus = null;
         this.winner = null;
