@@ -169,7 +169,7 @@ class TicTacToe {
         let tileElements = document.querySelectorAll('.tile');
         // TODO: Use a loop to add a "click" event listener to each tile that
         // will call the `handleMove` function whenever a tile is clicked.
-        for (tile of tileElements){
+        for (let tile of tileElements){
             tile.addEventListener('click', handleMove);
         }
     }
