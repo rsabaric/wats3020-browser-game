@@ -126,7 +126,7 @@ class TicTacToe {
                 let newCol=document.createElement('div');
                 newCol.setAttribute('class','col-xs-3');
                 let newTile = document.createElement('span');
-                newTile.setAttribute('class','tile glyphicon glyphicon-question-sign');
+                newTile.setAttribute('class','tile glyphicon glyphicon-flash');
                 newTile.dataset.x = i;
                 newTile.dataset.y = j;
                 newCol.appendChild(newTile);
