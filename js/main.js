@@ -65,6 +65,8 @@ class TicTacToe {
             for (let position of condition){
                 if (this.gameState[position[0]][position[1]] != this.currentPlayer.token) {
                     winningCondition = false;
+                    console.log(this.currentPlayer.token);
+                    console.log(this.gameState[position[0]][position[1]]);
                 }
             }
             if (winningCondition) {
